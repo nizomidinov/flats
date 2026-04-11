@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    background-color: rgb(29, 29, 29);
+    padding: 15px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo img {
+    width: 30px;
+    height: auto;
+    filter: invert(100%);
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.first-list li a:hover {
+    color: rgba(191, 191, 191, 0.372);
+}
+
+.first-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    
+}
+
+.first-list li {
+    position: relative;
+    
+}
+
+.first-list li a {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.first-list ul a{
+    margin: 0 10px;
+    display: block;
+    transition: all 0.3 ease;
+}
+
+.first-list ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0px;
+    background: rgb(29, 29, 29);
+    opacity: 0;
+    visibility: hidden;
+    transform:translateY(-100%);
+    transition: all 0.4s ease;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.first-list li:hover ul {
+    display: block;
+    opacity:1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.phone-wrapper a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.phone-wrapper img {
+    width: 18px;
+    height: auto;
+    filter: invert(100%);
+}
+
+.phone-wrapper a:hover{
+    color: rgba(191, 191, 191, 0.372);
+}
+
+.call-me {
+    border: 1px solid white;
+    background-color: rgb(29, 29, 29);
+    border-radius: 20px;
+    padding: 5px 35px;
+}
+
+.call-me:hover {
+    color: rgba(191, 191, 191, 0.372);
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.slider-container {
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    transition: all 0.6s ease;
+}
+
+.slide {
+    /*flex: 1 чтобы этот слайд занимал одну треть*/
+    flex: 1;
+    background-image: url(imgs/flat1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.slide h2 {
+    font-size: 60px;
+    color: #ffffff;
+    line-height: 48px;
+    text-shadow: 2px 8px 15px rgba(0, 0, 0, 0.673);
+    margin-top: 70px;
+    max-width: 700px;
+}
+
+.slide p {
+    background-color: rgba(0, 0, 0, 0.592);
+    color: #ffffff;
+    border-radius: 8px;
+    margin: 50px 0;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.slide a {
+    display: inline-block;
+    text-decoration: none;
+    color: #292929;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 7px 25px;
+    margin-bottom: 50px;
+    box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.27);
+}
+
+.slider-buttons {
+    text-align: center;
+    transform: translateY(-50%);     
+    
+}
+
+.slider-buttons a{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #292929;
+    border-radius: 20px;
+    font-size: 20px;
+    display: inline-block;
+    box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.27);
+    background-image: url(imgs/rightArrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 80px;
+    background-size: 20%;
+}
+
+.slider-buttons a:first-child {
+    transform: scaleX(-1);
+}
+
+
+
+/* завершить стили слайда и слайдер баттонс сделать анимацию для вывпадающего меню занавеска! Доделать слайдер  */
