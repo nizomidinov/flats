@@ -8,6 +8,66 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+body::selection {
+    background-color: #888888;
+}
+
+.modal {
+    width: 100%;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 23px;
+    background-color: #ffffff;
+    max-width: 400px;
+    flex-direction: column;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+form h2 {
+    font-size: 35px;
+    margin-bottom: 23px;
+    color: #29292942;
+}
+
+.inside-form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.inside-form input {
+    min-height: 30px;
+    border-radius: 5px;
+    border:1px solid rgba(0, 0, 0, 0.225) ;
+    padding: 10px 4px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+.inside-form button {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    border-radius: 5px;
+    color: #292929c8;
+    padding: 10px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
 header {
     background-color: rgb(29, 29, 29);
     padding: 15px 0;
@@ -17,7 +77,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-
 }
 
 header .container {
@@ -52,12 +111,12 @@ header a {
     display: flex;
     list-style: none;
     gap: 30px;
-    
+
 }
 
 .first-list li {
     position: relative;
-    
+
 }
 
 .first-list li a {
@@ -67,7 +126,7 @@ header a {
     display: inline-block;
 }
 
-.first-list ul a{
+.first-list ul a {
     margin: 0 10px;
     display: block;
     transition: all 0.3 ease;
@@ -83,7 +142,7 @@ header a {
     background: rgb(29, 29, 29);
     opacity: 0;
     visibility: hidden;
-    transform:translateY(-100%);
+    transform: translateY(-100%);
     transition: all 0.4s ease;
     z-index: 5;
     pointer-events: none;
@@ -91,7 +150,7 @@ header a {
 
 .first-list li:hover ul {
     display: block;
-    opacity:1;
+    opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
@@ -109,7 +168,7 @@ header a {
     filter: invert(100%);
 }
 
-.phone-wrapper a:hover{
+.phone-wrapper a:hover {
     color: rgba(191, 191, 191, 0.372);
 }
 
@@ -132,6 +191,7 @@ header a {
 
 .slider-container {
     overflow: hidden;
+    margin-bottom: -30px;
 }
 
 .slider {
@@ -175,15 +235,23 @@ header a {
     padding: 7px 25px;
     margin-bottom: 50px;
     box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.27);
+    transition: all 0.3s ease;
+}
+
+.slide a:hover {
+    transform: translateY(-15%);
 }
 
 .slider-buttons {
     text-align: center;
-    transform: translateY(-50%);     
-    
+    transform: translateY(-50%);
 }
 
-.slider-buttons a{
+#right-b:hover {
+    transform: translateY(-15%);
+}
+
+.slider-buttons a {
     text-decoration: none;
     background-color: #ffffff;
     color: #292929;
@@ -197,12 +265,214 @@ header a {
     height: 40px;
     width: 80px;
     background-size: 20%;
+    transition: all 0.3s ease;
 }
 
-.slider-buttons a:first-child {
+.slider-buttons::selection {
+    background-color: #00000000;
+}
+
+#left-b {
+    /* переворачивает по горизонтали */
     transform: scaleX(-1);
 }
 
+#left-b:hover {
+    transform: translateY(-15%) scaleX(-1);
+}
 
+.guests-beds img {
+    width: 20px;
+}
 
-/* завершить стили слайда и слайдер баттонс сделать анимацию для вывпадающего меню занавеска! Доделать слайдер  */
+.card>img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#flats h2 {
+    text-align: center;
+    color: #292929;
+    margin: 30px;
+}
+
+.all-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.card {
+    width: calc((100% - 40px) / 3);
+    box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.225);
+}
+
+.card-info {
+    background-color: #ffffff;
+    padding: 0px 17px;
+    color: #292929;
+}
+
+.guests-beds {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.guests-beds div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 10px;
+    color: #292929;
+}
+
+.card-info img {
+    opacity: 0.9;
+}
+
+#comments h2 {
+    text-align: center;
+    color: #292929;
+    margin: 30px;
+}
+
+.all-comm {
+    display: none;
+    justify-content: space-between;
+    gap: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.visible {
+    display: flex;
+}
+
+.opaque {
+    opacity: 1;
+}
+
+.comment {
+    background-color: #ffffff;
+    box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    flex: 1;
+}
+
+.comment img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.comment div {
+    display: flex;
+    gap: 10px;
+}
+
+.comment>p {
+    margin-bottom: 30px;
+}
+
+.comment-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    justify-content: center;
+}
+
+.comment-info p {
+    font-size: 14px;
+}
+
+.comment-info h4 {
+    font-size: 15px;
+}
+
+#comments .slider-buttons {
+    transform: none;
+    margin: 30px 0;
+}
+
+#comment-left {
+    transform: scaleX(-1);
+}
+
+#comment-left:hover {
+    transform: translateY(-15%) scaleX(-1);
+}
+
+#comment-right:hover {
+    transform: translateY(-15%);
+}
+
+footer {
+    background: rgb(29, 29, 29);
+    color: #ffffff;
+}
+
+footer img {
+    filter: invert(100%);
+    width: 20px;
+}
+
+footer .container {
+    padding: 30px;
+}
+
+footer a:hover {
+    color: rgba(191, 191, 191, 0.372);
+}
+
+.logo img {
+    width: 30px;
+    height: auto;
+    filter: invert(100%);
+}
+
+.left a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-media {
+    display: flex;
+    gap: 30px;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+.phone-wrapper {
+    display: flex;
+    gap: 7px;
+}
+
+.phone-wrapper a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.phone-wrapper a:hover {
+    color: rgba(191, 191, 191, 0.372);
+}
+
+.location {
+    display: flex;
+    gap: 7px;
+}
+
+.left-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    display: flex;
+    gap: 60px;
+}
