@@ -476,3 +476,7 @@ footer a:hover {
     display: flex;
     gap: 60px;
 }
+
+.inside-form button:hover {
+    background-color: rgba(191, 191, 191, 0.372);
+} 
